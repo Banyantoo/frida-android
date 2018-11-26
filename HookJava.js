@@ -3,7 +3,7 @@ Java.perform(function () {
     var application = Java.use("android.app.Application");
     console.log(application.toString());
     application.attach.overload('android.content.Context').implementation = function (context) {
-        console.log("hook Application");
+        console.log("test Application");
         var result = this.attach(context);
         var classloader = context.getClassLoader();
         Java.classFactory.loader = classloader;
@@ -19,7 +19,7 @@ function attachAPP() {
         return;
     }
     flag = true;
-    console.log("strart hook JResponse");
+    console.log("strart test JResponse");
     jiguang = Java.classFactory.use("cn.jiguang.b.a.a");
     console.log(jiguang.toString());
    //setInterval(test,1000);
